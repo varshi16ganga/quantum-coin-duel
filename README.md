@@ -18,17 +18,18 @@
 
 ## Project Metadata
 
-* **Project Title:** `[Your Project Title]`
-* **Team Name:** `[Your Team Name]`
+* **Project Title:** `[A Qiskit-Powered Quantum Game]`
+* **Team Name:** `[Aarohi Shakthi]`
 * **Chosen Track:** `[Track 1: Quantum Games & Interactive Puzzles OR Track 2: Open-Domain Optimization & Real-World Solvers]`
-* **Video Presentation Link:** `[Insert YouTube Unlisted / Google Drive / Loom URL here]`
+* **Video Presentation Link:** `[
+Not available yet]`
   *(⚠️ Crucial: Ensure link access is set to "Anyone with the link can view" on Google Drive or "Unlisted / Public" on YouTube. Locked/inaccessible links cannot be scored!)*
-* **Live Demo Timestamp in Video:** `[MM:SS]` *(e.g., "Demo starts at 03:45")*
+* **Live Demo Timestamp in Video:** `[not available yet]` *(e.g., "Demo starts at 03:45")*
 
 ### Team Members (Max 4 members)
 | Name | Email | GitHub Username |
 | :--- | :--- | :--- |
-| `[Member 1 Name]` | `[Email]` | `[@username]` |
+| `[Jakkaraju Raghavi]` | `[raghavij2006@gmail.com]` | `[raghavi]` |
 | `[Member 2 Name]` | `[Email]` | `[@username]` |
 | `[Member 3 Name]` | `[Email]` | `[@username]` |
 | `[Member 4 Name]` | `[Email]` | `[@username]` |
@@ -38,26 +39,30 @@
 ## 1. Project Overview & Motivation
 
 * **Summary (3–4 sentences):**  
-  `[Provide a concise executive summary of what you built. What is the game or optimization dilemma?]`
+  `[Quantum Coin Duel is an interactive quantum game built using Python and Qiskit. Players predict Heads or Tails while exploring how quantum operations influence measurement outcomes. The game demonstrates quantum superposition using the Hadamard gate, state changes using the Pauli-X gate, and measurement to obtain a classical result. A score counter makes learning quantum concepts engaging and interactive.]`
 
 * **Why this problem / game?**  
-  `[Explain why you chose this specific topic. Why is it engaging, practically relevant, or pedagogically meaningful?]`
+  `[Quantum computing can be difficult for beginners to understand through theory alone. Quantum Coin Duel provides a simple, game-based way to explore quantum circuits, probability, and measurement. It connects quantum computing concepts with player decisions and encourages experimentation with different quantum operations.]`
 
 ---
 
 ## 2. Quantum Architecture & Mechanics
 
 * **Core Quantum Principles Used:**  
-  `[Specify the exact quantum principles at play: e.g., Superposition (H gate), Entanglement (Bell states / CNOT), Measurement Collapse, Interference, or QAOA Cost Hamiltonian.]`
+  `[Superposition using the Hadamard (H) gate.
+
+Qubit state transformation using the Pauli-X (X) gate.
+
+Measurement collapse from a quantum state to a classical outcome..]`
 
 * **How the Quantum Circuit is Integrated:**  
-  `[Explain how quantum states map to your game board, strategy, or optimization problem. How does your Qiskit circuit interact with player input or the optimization loop?]`
+  `[he player selects a quantum operation and predicts Heads or Tails. The application constructs a one-qubit Qiskit circuit and applies the selected operation. The resulting state probabilities determine a simulated outcome, which is compared with the player's prediction to update the score.]`
 
 * **Circuit Details:**  
-  * **Number of Qubits:** `[e.g., 4 qubits]`
-  * **Key Gates Used:** `[e.g., H, CX, RZ, Measurement]`
-  * **Primitives Used:** `[e.g., StatevectorSampler, StatevectorEstimator, or Qiskit Aer simulator]`
-  * **Other Technologies Used:** `[e.g., Streamlit for UI, NetworkX for graph generation, Pygame, etc. (Note: Qiskit must power the quantum logic)]`
+  * **Number of Qubits:** `[1 qubit.]`
+  * **Key Gates Used:** `[H, X, and measurement.]`
+  * **Primitives Used:** `[Qiskit Statevector simulation and classical sampling based on the state probabilities.]`
+  * **Other Technologies Used:** `[Python and Streamlit.]`
 
 ```python
 # Optional: Paste a representative snippet of your core Qiskit circuit code here
@@ -106,41 +111,59 @@
 
    # Or open the Jupyter Notebook:
    jupyter notebook notebooks/solution.ipynb
-   ```
+   # Run the Quantum Coin Duel web game
+streamlit run src/main.py
+
+# Or open the Jupyter notebook
+jupyter notebook notebooks/solution.ipynb
 
 ---
 
 ## 4. Implementation Walkthrough & Live Demo
 
 * **Walkthrough of Gameplay / Optimization Pipeline:**  
-  `[Describe the user experience or algorithmic workflow step-by-step. What inputs does the user provide, what happens inside the quantum circuit, and what output is produced?]`
+  `[The player opens the Quantum Coin Duel game.
+
+The player selects a quantum operation: Hadamard (H), Pauli-X (X), or No operation.
+
+The player predicts Heads or Tails.
+
+Qiskit constructs a one-qubit quantum circuit and calculates the output-state probabilities.
+
+The game samples an outcome and compares it with the player's prediction.
+
+The score is updated based on whether the prediction is correct.]`
 
 * **Key Screenshots / Terminal Output:**  
-  `[Paste sample terminal output, game screenshots, or optimization convergence plots here to demonstrate that the project runs.]`
+  `[Screenshots of the Quantum Coin Duel interface, quantum circuit, measurement outcome, and score will be added after the application is successfully run and tested.]`
 
 ---
 
 ## 5. Classical vs. Quantum Comparison
 
 * **Classical Baseline / Counterpart:**  
-  `[What classical baseline did you compare against? (e.g., a classical player, a random guesser, a brute-force classical solver, or a naive greedy heuristic)]`
+  `[A classical coin-toss game serves as the baseline for comparison. It produces Heads or Tails using classical random sampling, with each outcome having a probability of 50% for a fair coin. This baseline helps compare classical randomness with the measurement probabilities generated by the Qiskit quantum circuit.]`
 
 * **Comparative Analysis:**  
-  `[How did the quantum approach compare to the classical baseline? For Track 1: Did quantum strategy give an unfair advantage or unique gameplay behavior? For Track 2: What was the approximation ratio (C_quantum / C_optimal) and feasibility yield?]`
+  `[The classical baseline generates Heads or Tails using classical random sampling, while the quantum approach uses Qiskit to calculate measurement probabilities from a quantum circuit. The Hadamard gate creates a superposition with equal probabilities for Heads and Tails, whereas the Pauli-X gate flips the initial qubit state from |0⟩ to |1⟩. These operations demonstrate different quantum behaviors and provide an interactive learning experience. The current implementation does not demonstrate a guaranteed advantage over classical coin tossing.]`
 
 ---
 
 ## 6. Performance, Results & Limitations
 
 * **Key Results & Observations:**  
-  `[Summarize the main results from your experiments, simulations, or gameplay tests.]`
+  `[The project is designed to demonstrate how quantum gates affect measurement outcomes in a one-qubit circuit. The Hadamard gate produces equal probabilities for the two outcomes, while the Pauli-X gate transforms the initial state |0⟩ into |1⟩. Gameplay results and application performance will be documented after successful testing.]`
 
 * **Critical Reflection on Limitations:**  
-  `[Be honest and rigorous: What happens if this is scaled to larger qubit counts? How would physical quantum noise, gate errors, and decoherence affect your solution on real NISQ hardware? Acknowledging limitations demonstrates true scientific understanding!]`
+  `[The current project uses a simple one-qubit simulation and does not require physical quantum hardware. Real quantum devices may produce different results because of noise, gate errors, and decoherence. Increasing the number of qubits and circuit operations can increase computational costs and make results more sensitive to errors. Future improvements could include entangled qubits, additional strategic choices, and testing on real quantum hardware.]`
 
 ---
 
 ## 7. References & Acknowledgments
+- Qiskit documentation: https://docs.quantum.ibm.com/
+- Streamlit documentation: https://docs.streamlit.io/
+- Qiskit Fall Fest 2026 — IIIT Kottayam Hackathon reference materials provided in this repository.
+- Acknowledgment: This project explores interactive quantum computing education using Python and Qiskit.
 
 * `[Cite any open-source libraries, GitHub repositories, or research papers you referenced during the hackathon.]`
 * `[Acknowledge team contributions and tools used.]`
